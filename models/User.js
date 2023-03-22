@@ -6,10 +6,10 @@ const userSchema = new Schema(
     first: String,
     last: String,
     age: Number,
-    videos: [
+    applications: [
       {
         type: Schema.Types.ObjectId,
-        ref: 'Video',
+        ref: 'Application',
       },
     ],
   },

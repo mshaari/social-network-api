@@ -1,5 +1,5 @@
 const User = require('./User');
-const Response = require('./Response');
-const Video = require('./Video');
+const Tag = require('./Tag');
+const Application = require('./Application');
 
-module.exports = { User, Video, Response };
+module.exports = { User, Application, Tag };

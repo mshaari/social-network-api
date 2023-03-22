@@ -22,6 +22,10 @@ const names = [
   'Abdulbasir',
   'Abdulkadir',
   'Abdulkarem',
+  'Smith',
+  'Jones',
+  'Coollastname',
+  'enter_name_here',
   'Ze',
   'Zechariah',
   'Zeek',
@@ -52,31 +56,55 @@ const names = [
   'Zubair',
   'Zubayr',
   'Zuriel',
-  ``,
+  'Xander',
+  'Jared',
+  'Grace',
+  'Alex',
+  'Mark',
+  'Tamar',
+  'Farish',
+  'Sarah',
+  'Nathaniel',
+  'Parker',
 ];
 
-const descriptionsBodies = [
-  'How to disagree with someone',
-  'iPhone review',
-  'how-to video',
-  'video essay on the history of video games',
-  'How to make money on the App Store',
-  'Learn NextJS in five minutes (Not clickbate)',
-  'Movie trailer',
+const appDescriptions = [
+  'Decision Tracker',
+  'Find My Phone',
+  'Learn Piano',
+  'Starbase Defender',
+  'Tower Defense',
+  'Monopoly Money Manager',
+  'Movie trailers',
   'Hello world',
-  'Another possible solution to the algorithm',
-  'Apology video',
-  'Submission for startup pitch',
+  'Stupid Social Media App',
+  'Notes',
+  'Messages',
+  'Email',
+  'Compass',
+  'Firefox',
+  'Running app',
+  'Cooking app',
+  'Poker',
+  'Deliveries',
 ];
 
-const possibleResponses = [
-  'I disagree!',
-  'I tried your algorithm, here were the results',
-  'This was awesome',
-  'Thank you for the great content',
-  'Please check out my video response',
-  'Like and subscribe to my channel please',
-  'Reply: The side effects of in app purchases on digital marketplaces',
+const possibleTags = [
+  'html',
+  'css',
+  'javascript',
+  'typescript',
+  'go',
+  'cpp',
+  'python',
+  'rust',
+  'React',
+  'React Native',
+  'NextJS',
+  'Tailwind',
+  'Vue',
+  'mongodb',
+  'sql',
 ];
 
 const users = [];
@@ -88,29 +116,29 @@ const getRandomArrItem = (arr) => arr[Math.floor(Math.random() * arr.length)];
 const getRandomName = () =>
   `${getRandomArrItem(names)} ${getRandomArrItem(names)}`;
 
-// Function to generate random videos that we can add to the database. Includes video responses.
-const getRandomVideos = (int) => {
+// Function to generate random applications that we can add to the database. Includes application tags.
+const getRandomApplications = (int) => {
   let results = [];
   for (let i = 0; i < int; i++) {
     results.push({
       published: Math.random() < 0.5,
-      description: getRandomArrItem(descriptionsBodies),
-      advertiserFriendly: Math.random() < 0.5,
-      responses: [...getVideoResponses(3)],
+      description: getRandomArrItem(appDescriptions),
+      buildSuccess: Math.random() < 0.5,
+      tags: [...getApplicationTags(3)],
     });
   }
   return results;
 };
 
-// Create the responses that will be added to each video
-const getVideoResponses = (int) => {
+// Create the tags that will be added to each application
+const getApplicationTags = (int) => {
   if (int === 1) {
-    return getRandomArrItem(possibleResponses);
+    return getRandomArrItem(possibleTags);
   }
-  let results = [];
+  const results = [];
   for (let i = 0; i < int; i++) {
     results.push({
-      responseBody: getRandomArrItem(possibleResponses),
+      tagBody: getRandomArrItem(possibleTags),
       username: getRandomName(),
     });
   }
@@ -118,4 +146,4 @@ const getVideoResponses = (int) => {
 };
 
 // Export the functions for use in seed.js
-module.exports = { getRandomName, getRandomVideos, getRandomVideos };
+module.exports = { getRandomName, getRandomApplications };

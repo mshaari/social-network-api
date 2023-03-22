@@ -1,8 +1,8 @@
 const { Schema, model } = require('mongoose');
-const Response = require('./Response');
+const Tag = require('./Tag');
 
 // Schema to create Post model
-const videoSchema = new Schema(
+const applicationSchema = new Schema(
   {
     published: {
       type: Boolean,
@@ -12,7 +12,7 @@ const videoSchema = new Schema(
       type: Date,
       default: Date.now,
     },
-    advertiserFriendly: {
+    buildSuccess: {
       type: Boolean,
       default: true,
     },
@@ -21,7 +21,7 @@ const videoSchema = new Schema(
       minLength: 15,
       maxLength: 500,
     },
-    responses: [Response],
+    tags: [Tag],
   },
   {
     toJSON: {
@@ -31,15 +31,15 @@ const videoSchema = new Schema(
   }
 );
 
-// Create a virtual property `responses` that gets the amount of response per video
-videoSchema
+// Create a virtual property `getTags` that gets the amount of tags associated with an application
+applicationSchema
   .virtual('getResponses')
   // Getter
   .get(function () {
-    return this.responses.length;
+    return this.tags.length;
   });
 
-// Initialize our Video model
-const Video = model('video', videoSchema);
+// Initialize our Application model
+const Application = model('application', applicationSchema);
 
-module.exports = Video;
+module.exports = Application;
