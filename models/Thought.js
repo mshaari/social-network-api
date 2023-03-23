@@ -2,6 +2,11 @@
 const { Schema, model, Types } = require('mongoose');
 
 // Create the schema for reactions. Though this will not become a model, it is used as the reaction field's subdocument in the Thought model below
+// Example Data:
+// {
+//   "reactionBody": "Insert text here",
+//   "username": "Username here",
+// }
 const reactionSchema = new Schema(
   {
     reactionId: {
