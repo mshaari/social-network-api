@@ -9,7 +9,7 @@ module.exports = {
       .catch((err) => res.status(500).json(err));
   },
 
-  // Gets a single application using the findOneAndUpdate method. We pass in the ID of the application and then respond with it, or an error if not found
+  // Gets a single thought using the findOne method. We pass in the ID of the thought and then respond with it, or an error if not found
   getSingleThought(req, res) {
     Thought.findOne({ _id: req.params.thoughtId })
       .then((thought) =>
@@ -34,7 +34,7 @@ module.exports = {
       .then((user) =>
         !user
           ? res.status(404).json({
-              message: 'Thought created, but found no user with that ID',
+              message: 'Thought created, but found no user with that username',
             })
           : res.json('Created the thought 🎉')
       )

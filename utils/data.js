@@ -89,22 +89,11 @@ const appDescriptions = [
   'Deliveries',
 ];
 
-const possibleTags = [
-  'html',
-  'css',
-  'javascript',
-  'typescript',
-  'go',
-  'cpp',
-  'python',
-  'rust',
-  'React',
-  'React Native',
-  'NextJS',
-  'Tailwind',
-  'Vue',
-  'mongodb',
-  'sql',
+const possibleReactions = [
+  'Sick',
+  'Awesome',
+  'Nice',
+  'Super cool',
 ];
 
 const users = [];
@@ -112,12 +101,12 @@ const users = [];
 // Get a random item given an array
 const getRandomArrItem = (arr) => arr[Math.floor(Math.random() * arr.length)];
 
-// Gets a random full name
-const getRandomName = () =>
+// Gets a random username
+const getRandomUsername = () =>
   `${getRandomArrItem(names)} ${getRandomArrItem(names)}`;
 
 // Function to generate random applications that we can add to the database. Includes application tags.
-const getRandomApplications = (int) => {
+const getRandomThoughts = (int) => {
   let results = [];
   for (let i = 0; i < int; i++) {
     results.push({
@@ -146,4 +135,4 @@ const getApplicationTags = (int) => {
 };
 
 // Export the functions for use in seed.js
-module.exports = { getRandomName, getRandomApplications };
+module.exports = { getRandomUsername, getRandomThoughts };
