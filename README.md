@@ -33,7 +33,7 @@ npm start
 ``` 
 To actually interact with the Social Network API, you can use Insomnia, as demonstrated in the upcoming video.
 
-Click [here](https://drive.google.com/file/d/1Zu0hF7Ghakm8JL27GmrGXOo7KD_WJ1pA/view?usp=sharing) to watch a video demonstration of how to use the application.
+Click [here](https://drive.google.com/file/d/1FODVKi9fvk5zn2aXnuAmXsCr0n67aZli/view?usp=sharing) to watch a video demonstration of how to use the application.
 
 ## Contributing
 Please do not contribute to this application.
