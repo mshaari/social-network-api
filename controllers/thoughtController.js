@@ -4,7 +4,8 @@ module.exports = {
   // Function to get all of the thoughts by invoking the find() method with no arguments.
   // Then we return the results as JSON, and catch any errors. Errors are sent as JSON with a message and a 500 status code
   getThoughts(req, res) {
-    Thought.find()
+    Thought.find({})
+      .select('-__v')
       .then((thoughts) => res.json(thoughts))
       .catch((err) => res.status(500).json(err));
   },
@@ -12,6 +13,7 @@ module.exports = {
   // Gets a single thought using the findOne method. We pass in the ID of the thought and then respond with it, or an error if not found
   getSingleThought(req, res) {
     Thought.findOne({ _id: req.params.thoughtId })
+      .select('-__v')
       .then((thought) =>
         !thought
           ? res.status(404).json({ message: 'No thought with that ID' })

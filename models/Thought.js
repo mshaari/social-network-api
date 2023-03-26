@@ -30,7 +30,7 @@ const reactionSchema = new Schema(
     createdAt: {
       type: Date,
       default: Date.now,
-      // NEED TO USE GETTER METHOD TO FORMAT TIMESTAMP ON QUERY
+      // Getter method to format date and time
       get: (timestamp) => formatTimestamp(timestamp),
     },
   },
