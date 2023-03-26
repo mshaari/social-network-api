@@ -29,7 +29,7 @@ To invoke the Employee Tracker, open 'server.js' in an integrated terminal and r
 ```
 npm run seed
 
-npm start
+npm run start
 ``` 
 To actually interact with the Social Network API, you can use Insomnia, as demonstrated in the upcoming video.
 
