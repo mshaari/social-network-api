@@ -3,11 +3,11 @@ const { Schema, model, Types } = require('mongoose');
 
 function formatTimestamp(input) {
   const time = new Date(input);
-  return `${time.toDateString()} ${time.toLocaleTimeString()}`
+  return `${time.toDateString()} at ${time.toLocaleTimeString()}`
 }
 
 // Create the schema for reactions. Though this will not become a model, it is used as the reaction field's subdocument in the Thought model below
-// Example Data:
+// Example data you could use when posting a thought in Insomnia (you pass in the username, not the user's ID):
 // {
 //   "reactionBody": "Insert text here",
 //   "username": "Username here",
@@ -44,6 +44,7 @@ const reactionSchema = new Schema(
   }
 );
 
+// Create thought schema
 const thoughtSchema = new Schema(
   {
     thoughtText: {

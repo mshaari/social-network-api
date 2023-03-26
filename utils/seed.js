@@ -8,6 +8,7 @@ connection.once('open', async () => {
   await Thought.deleteMany({});
   await User.deleteMany({});
 
+  // Array of users
   const users = [
     {
       username: "michaelShaari",
@@ -27,6 +28,7 @@ connection.once('open', async () => {
     }
   ];
 
+  // Array of thoughts
   const thoughts = [
     {
       thoughtText: "Today is such a nice day, we should all go for a walk around Apple Park",

@@ -11,36 +11,29 @@
 * [Questions](#questions)
 
 ## Description
-The E-Commerce Back End is the back-end for an internet retail site, demonstrating the fundamental architecture of e-commerce sites. It utilizes Express.js API and uses Sequelize to interact with a MySQL database. There are products, tags, and categories. CRUD (create, read, update, and delete) operations can be performed on all different data entities (products/tags/categories). Products can be assigned to one single category and can be assigned to multiple tags. One category can have many products. One tag can have many products. 
+The Social Network API is the back-end for a social media site that allows users to create accounts with emails and usernames, post thoughts, add reations to thoughts, and add other users as friends. The Social Network API makes extensive use of MongoDB due its speed with large quantities of data and flexibility with unstructured data. The application uses Express.js for routing, a MongoDB database, and the Mongoose ODM. 
 
 ## Installation
-To install the E-Commerce Back End, download [the repository](https://github.com/mshaari/e-commerce-back-end) from GitHub by running
+To install the E-Commerce Back End, download [the repository](https://github.com/mshaari/social-network-api) from GitHub by running
 ```
-git clone git@github.com:mshaari/e-commerce-back-end.git
+git clone git@github.com:mshaari/social-network-api.git
 ```
-in your command line and open in Visual Studio Code. Run 
+in your command line and open in Visual Studio Code. To install all dependencies, run
  
 ```
 npm install
-``` 
- 
-to install all dependencies. You must also create a ".env" file with the following text:
-
-```
-DB_NAME=library_db
-DB_PASSWORD=
-DB_USER=root
 ```
 
 ## Usage
-To invoke the Employee Tracker, open 'server.js' in an integrated terminal and run the following two commands:
+To invoke the Employee Tracker, open 'server.js' in an integrated terminal and run the following two commands (you may skip the first if you do not wish to seed the database with sample data):
 ```
 npm run seed
 
 npm start
 ``` 
+To actually interact with the Social Network API, you can use Insomnia, as demonstrated in the upcoming video.
 
-Click [here](https://drive.google.com/file/d/1Zu0hF7Ghakm8JL27GmrGXOo7KD_WJ1pA/view?usp=sharing) to watch a video demonstration of how to use the E-Commerce Back End.
+Click [here](https://drive.google.com/file/d/1Zu0hF7Ghakm8JL27GmrGXOo7KD_WJ1pA/view?usp=sharing) to watch a video demonstration of how to use the application.
 
 ## Contributing
 Please do not contribute to this application.
